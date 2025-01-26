@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Website</title>
+    <title>Healthcare Webpage</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Global Styles */
         body {
-            margin: 0;
             font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
         }
 
+        h1, h3 {
+            color: #2c3e50;
+        }
+
+        /* Header */
         header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #0056b3;
-            padding: 10px 20px;
-            color: #fff;
+            padding: 0 50px;
         }
 
-        .logo {
+        /* Logo and Website Name */
+        .logo-container {
             display: flex;
             align-items: center;
         }
@@ -30,110 +45,276 @@
             margin-right: 10px;
         }
 
-        .logo span {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .website-name h1 {
+            font-size: 30px;
+            margin: 0;
         }
 
-        nav {
+        /* Left options (Doctors, Medicals, Hospitals) */
+        .left-options {
             display: flex;
-            gap: 20px;
+            align-items: center;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #cce7ff;
-        }
-
-        .profile {
+        .dropdown {
             position: relative;
+            margin-right: 20px;
         }
 
-        .profile-logo {
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .dropbtn:hover {
+            background-color: #2980b9;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 4px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Search Bar */
+        .search-bar input {
+            padding: 8px;
+            width: 200px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 8px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Chatbot Section */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 300px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            z-index: 9999; /* Ensures the chatbot is on top of everything */
+        }
+
+        .chatbot-header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        .chatbot-body {
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        .chatbot-footer {
+            display: flex;
+            padding: 10px;
+            background-color: #f4f6f9;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .chatbot-footer input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .chatbot-footer button {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chatbot-footer button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Page Section with Background Image */
+        #page1 {
+            position: relative;
+            height: 611px;
+            width: 100%;
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #0056b3;
-            font-weight: 700;
-            font-size: 1.2rem;
         }
 
-        .profile-options {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            background-color: #fff;
-            color: #007acc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-            z-index: 1000;
-            font-size: 15px;
+        /* Image container */
+        #box1 {
+            position: relative;
+            height: 611px;
+            width: 100%;
         }
 
-        .profile-options a {
-            display: block;
-            padding: 10px 20px;
+        /* Background Image styles */
+        #box1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        /* About Us, Feedback Form, and Footer */
+        #page2 {
+            height: auto  ;
+            padding: 30px;
+            background-color: lightskyblue;
+            text-align: center;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: #3498db;
             text-decoration: none;
-            color: #007acc;
-            transition: background-color 0.3s ease;
         }
 
-        .profile-options a:hover {
-            background-color: #e6f0ff;
+        .social-links a:hover {
+            color: #2980b9;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <div class="logo">
-            <img src="https://tse2.mm.bing.net/th?id=OIP.h9smgB9BVfcaZwbHYMcgmgHaFb&pid=Api&P=0&h=180" alt="Website Logo">
-            <span>Healthcare AI</span>
-        </div>
-        <nav>
-            <a href="doctors.html">Doctors</a>
-            <a href="hospitals.html">Hospitals</a>
-            <a href="medical.html">Medicals</a>
-        </nav>
-        <div class="profile">
-            <div class="profile-logo"></div>
-            <div class="profile-options">
-                <a href="profile.html">Profile</a>
-
-                <a href="{% url 'logout' %}">Log Out</a>
+        {% csrf_token %}
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://thumbs.dreamstime.com/b/red-cross-vector-isolated-icon-medicine-health-hospital-sign-symbol-vector-abstract-graphic-design-emergency-medicine-first-aid-184209189.jpg" alt="Logo">
+                </div>
+                <div class="website-name">
+                    <h1 style="color: white;">HealthCarePro</h1>
+                </div>
             </div>
+            <div class="left-options">
+                <div class="dropdown">
+                    <button class="dropbtn">Doctors</button>
+                    <div class="dropdown-content">
+                        <a href="General Physicians.html">General Physicians</a>
+                        <a href="specialists.html">Specialists</a>
+                        <a href="dentists.html">Dentists</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Medicals</button>
+                    <div class="dropdown-content">
+                        <a href="pharmacy.html">Pharmacy</a>
+                        <a href="medical_supplies.html">Medical Supplies</a>
+                        <a href="vaccinations.html">Vaccinations</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Hospitals</button>
+                    <div class="dropdown-content">
+                        <a href="general_hospitals.html">General Hospitals</a>
+                        <a href="specialized_centers.html">Specialized Centers</a>
+                        <a href="emergency_services.html">Emergency Services</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="search-input">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">Profile</button>
+              <div class="dropdown-content">
+                  <a href="profile.html">My Profile</a>
+                  <a href="settings.html">Settings</a>
+                  <a href="#">Log Out</a>
+              </div>
+          </div>
         </div>
     </header>
 
-    <script>
-        // JavaScript to toggle profile options on click
-        const profileLogo = document.querySelector('.profile-logo');
-        const profileOptions = document.querySelector('.profile-options');
+    <!-- Chatbot Section -->
+    <div class="chatbot-container">
+        <div class="chatbot">
+            <div class="chatbot-header">
+                <h3>Chat with Us</h3>
+            </div>
+            <div class="chatbot-body" id="chatbot-body"></div>
+            <div class="chatbot-footer">
+                <input type="text" id="chat-input" placeholder="Ask me anything...">
+                <button onclick="sendChatMessage()">Send</button>
+            </div>
+        </div>
+    </div>
 
-        profileLogo.addEventListener('click', () => {
-            profileOptions.style.display =
-                profileOptions.style.display === 'block' ? 'none' : 'block';
-        });
+    <div id="page1">
+        <div id="box1">
+            <img src="lnm.jpg" alt="Background">
+        </div>
+    </div>
 
-        // Close dropdown if clicked outside
-        document.addEventListener('click', (event) => {
-            if (!profileLogo.contains(event.target) && !profileOptions.contains(event.target)) {
-                profileOptions.style.display = 'none';
-            }
-        });
-    </script>
+    <div id="page2">
+        <h2>About Us</h2>
+        <p>Welcome to HealthCarePro! We aim to provide the best healthcare services.</p>
+        <h3>Feedback Form</h3>
+        <form>
+            <input type="text" placeholder="Your Name" required><br><br>
+            <input type="email" placeholder="Your Email" required><br><br>
+            <textarea placeholder="Your Feedback"></textarea><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="social-links">
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        </div>
+        <footer>&copy; 2025 HealthCarePro. All rights reserved.</footer>
+    </div>
 </body>
 </html>
