@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Emergency Services</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#services" class="hover:underline">Services</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                    <li><a href="#resources" class="hover:underline">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <section id="hero" class="bg-white shadow-md rounded-lg p-6 text-center mb-8">
+            <h2 class="text-3xl font-bold text-red-600">We're Here to Help</h2>
+            <p class="text-lg mt-4">Providing 24/7 support for emergencies. Call <strong class="text-red-600">911</strong> or reach out through our services below.</p>
+        </section>
+
+        <section id="services" class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-700 mb-4">Our Services</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <h4 class="text-xl font-bold text-red-600">Medical Assistance</h4>
+                    <p class="mt-2">Immediate response for medical emergencies, including ambulance services and first aid support.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <h4 class="text-xl font-bold text-red-600">Fire Services</h4>
+                    <p class="mt-2">Firefighting and rescue operations to ensure safety during fire-related incidents.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <h4 class="text-xl font-bold text-red-600">Law Enforcement</h4>
+                    <p class="mt-2">Support for crimes, public safety, and coordination with local police departments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h3 class="text-2xl font-bold text-gray-700 mb-4">Contact Us</h3>
+            <form action="#" method="POST" class="grid grid-cols-1 gap-4">
+                <div>
+                    <label for="name" class="block text-gray-600">Full Name</label>
+                    <input type="text" id="name" name="name" class="w-full border rounded-lg px-4 py-2" placeholder="Your name">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-600">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full border rounded-lg px-4 py-2" placeholder="Your email">
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-600">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full border rounded-lg px-4 py-2" placeholder="Your message"></textarea>
+                </div>
+                <button type="submit" class="bg-red-600 text-white font-bold rounded-lg px-6 py-2 hover:bg-red-700">Submit</button>
+            </form>
+        </section>
+
+        <section id="resources" class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-700 mb-4">Helpful Resources</h3>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><a href="#" class="text-red-600 hover:underline">Emergency Preparedness Guide</a></li>
+                <li><a href="#" class="text-red-600 hover:underline">Community Safety Tips</a></li>
+                <li><a href="#" class="text-red-600 hover:underline">Local Emergency Numbers</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Emergency Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

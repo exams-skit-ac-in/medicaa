@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Trusted Pharmacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #28a745, #218838);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x600?text=Pharmacy+Hero+Image');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero a {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .section {
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .services .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .services .card img {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+
+        .services .card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .services .card p {
+            color: #555;
+        }
+
+        /* Featured Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .products .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .products .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .products .product-card h4 {
+            margin: 15px 0;
+            font-size: 20px;
+        }
+
+        .products .product-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .products .product-card a {
+            text-decoration: none;
+            color: white;
+            background-color: #28a745;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Trusted Pharmacy</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Health and Wellness at Your Fingertips</h2>
+        <p>Find the best products, advice, and support for a healthier you.</p>
+        <a href="#products">Shop Now</a>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services">
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Prescription">
+                    <h3>Prescription Refills</h3>
+                    <p>Quick and easy prescription refills, just a click away.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Consultation">
+                    <h3>Consultations</h3>
+                    <p>Talk to our pharmacists for personalized health advice.</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Delivery">
+                    <h3>Home Delivery</h3>
+                    <p>Get medications delivered directly to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/250" alt="Product 1">
+                    <h4>Multivitamin Tablets</h4>
+                    <p>Support your daily health needs with these essential vitamins.</p>
+                    <a href="#">View Details</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/250" alt="Product 2">
+                    <h4>Allergy Relief</h4>
+                    <p>Stay allergy-free with fast-acting, long-lasting relief.</p>
+                    <a href="#">View Details</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/250" alt="Product 3">
+                    <h4>Cold & Flu Medicine</h4>
+                    <p>Feel better faster with our cold and flu remedies.</p>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 Your Trusted Pharmacy. All Rights Reserved.</p>
+        <p>Need assistance? Contact us at <a href="mailto:pharmacy@support.com">pharmacy@support.com</a></p>
+    </footer>
+
+</body>
+
+</html>
